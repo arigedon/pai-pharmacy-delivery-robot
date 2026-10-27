@@ -1,0 +1,9 @@
+This repository includes and modifies files from:
+
+  OsawaKousei/2DRoboPrac_ws (Apache License 2.0)
+  https://github.com/OsawaKousei/2DRoboPrac_ws
+  - src/nav_dev/src/teleop_node.cpp
+  - src/nav_dev/launch/nav_teleop.launch.py
+  - src/nav_dev/config/nav_teleop.yaml
+  - src/nav_dev/models/ (robot model world.sdf and meshes)
+  The robot model is also embedded in src/pharmacy_delivery/worlds/pharmacy_world.sdf.

@@ -1,0 +1,11 @@
+build/
+install/
+log/
+run_logs/
+videos/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+# 参考記事と同じく nek009/key_event から取得する（ライセンス未設定のため同梱しない）
+src/key_event_msgs/
+src/key_event_nodes/

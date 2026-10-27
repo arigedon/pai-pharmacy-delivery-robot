@@ -1,0 +1,70 @@
+# 薬局のレイアウト定義（単一の情報源）
+# - tools/gen_world.py がこのファイルから Gazebo のワールド(SDF)を生成する
+# - commander がこのファイルから配送先と通路グラフを読み込む
+# 座標は world 座標 [m]。ロボットは home (0, 0) に +x 向きで置かれる。
+
+# 配送先と通路の分岐点（ノード）
+#   expose: true  → LLM に配送先として見せる
+#   expose: false → 通路上の中継点（LLM には見せない）
+#   yaw: 到着後に向く方向 [rad]（null なら向きを合わせない）
+nodes:
+  home:      {name: "調剤室（待機位置）",     x: 0.0,  y: 0.0,  yaw: 0.0,     expose: true,
+              aliases: ["調剤室", "ホーム", "待機場所", "元の場所"]}
+  fridge:    {name: "冷蔵庫",                 x: -1.0, y: 1.55, yaw: 1.5708,  expose: true,
+              aliases: ["冷所", "冷蔵保管庫", "インスリン・ワクチン等の冷所保管品"]}
+  shelf_a:   {name: "薬品棚A（内服薬）",      x: 1.5,  y: 1.35, yaw: 1.5708,  expose: true,
+              aliases: ["内服薬の棚", "錠剤・カプセルの棚"]}
+  shelf_b:   {name: "薬品棚B（外用薬）",      x: 1.5,  y: -1.35, yaw: -1.5708, expose: true,
+              aliases: ["外用薬の棚", "湿布・軟膏・点眼薬の棚"]}
+  audit:     {name: "鑑査台",                 x: -0.8, y: -1.55, yaw: -1.5708, expose: true,
+              aliases: ["監査台", "薬剤師の最終確認", "鑑査"]}
+  counter_1: {name: "投薬カウンター1番",      x: 5.45, y: -1.8, yaw: 0.0,     expose: true,
+              aliases: ["1番カウンター", "1番窓口"]}
+  counter_2: {name: "投薬カウンター2番",      x: 5.45, y: 0.0,  yaw: 0.0,     expose: true,
+              aliases: ["2番カウンター", "2番窓口"]}
+  counter_3: {name: "投薬カウンター3番",      x: 5.45, y: 1.8,  yaw: 0.0,     expose: true,
+              aliases: ["3番カウンター", "3番窓口"]}
+  hub_n:     {name: "調剤室・北通路", x: 0.0, y: 1.1,  yaw: null, expose: false}
+  hub_s:     {name: "調剤室・南通路", x: 0.0, y: -1.1, yaw: null, expose: false}
+  door:      {name: "調剤室出入口",   x: 3.0, y: 0.0,  yaw: null, expose: false}
+  hall:      {name: "投薬エリア中央", x: 4.3, y: 0.0,  yaw: null, expose: false}
+
+# 通路（双方向）。直線で結んでも家具や壁に当たらない組だけを定義する
+edges:
+  - [home, hub_n]
+  - [home, hub_s]
+  - [hub_n, fridge]
+  - [hub_n, shelf_a]
+  - [hub_s, audit]
+  - [hub_s, shelf_b]
+  - [home, shelf_a]
+  - [home, shelf_b]
+  - [home, door]
+  - [shelf_a, door]
+  - [shelf_b, door]
+  - [door, hall]
+  - [hall, counter_1]
+  - [hall, counter_2]
+  - [hall, counter_3]
+
+# 障害物（直方体）。中心 x,y と寸法 sx,sy,sz [m]、色 RGBA
+obstacles:
+  - {name: wall_north,     x: 2.5,  y: 3.05,  sx: 8.3, sy: 0.1, sz: 0.5, color: [0.85, 0.85, 0.82, 1]}
+  - {name: wall_south,     x: 2.5,  y: -3.05, sx: 8.3, sy: 0.1, sz: 0.5, color: [0.85, 0.85, 0.82, 1]}
+  - {name: wall_west,      x: -1.65, y: 0.0,  sx: 0.1, sy: 6.2, sz: 0.5, color: [0.85, 0.85, 0.82, 1]}
+  - {name: wall_east,      x: 6.65, y: 0.0,   sx: 0.1, sy: 6.2, sz: 0.5, color: [0.85, 0.85, 0.82, 1]}
+  - {name: partition_n,    x: 3.0,  y: 1.825, sx: 0.1, sy: 2.35, sz: 0.5, color: [0.7, 0.75, 0.8, 1]}
+  - {name: partition_s,    x: 3.0,  y: -1.825, sx: 0.1, sy: 2.35, sz: 0.5, color: [0.7, 0.75, 0.8, 1]}
+  - {name: dispensing_table, x: -0.8, y: 0.0, sx: 0.6, sy: 1.6, sz: 0.8, color: [0.76, 0.6, 0.42, 1]}
+  - {name: shelf_a,        x: 1.5,  y: 2.2,   sx: 2.0, sy: 0.5, sz: 1.2, color: [0.3, 0.55, 0.85, 1]}
+  - {name: shelf_b,        x: 1.5,  y: -2.2,  sx: 2.0, sy: 0.5, sz: 1.2, color: [0.35, 0.7, 0.45, 1]}
+  - {name: fridge,         x: -1.0, y: 2.5,   sx: 0.7, sy: 0.7, sz: 1.6, color: [0.92, 0.95, 1.0, 1]}
+  - {name: audit_table,    x: -0.8, y: -2.4,  sx: 1.0, sy: 0.6, sz: 0.8, color: [0.95, 0.75, 0.3, 1]}
+  - {name: counter_1,      x: 6.2,  y: -1.8,  sx: 0.5, sy: 1.2, sz: 1.0, color: [0.9, 0.4, 0.4, 1]}
+  - {name: counter_2,      x: 6.2,  y: 0.0,   sx: 0.5, sy: 1.2, sz: 1.0, color: [0.95, 0.65, 0.3, 1]}
+  - {name: counter_3,      x: 6.2,  y: 1.8,   sx: 0.5, sy: 1.2, sz: 1.0, color: [0.6, 0.45, 0.85, 1]}
+
+# 床の色分け（見た目だけ。衝突なし）
+floor_zones:
+  - {name: zone_dispensing, x: 0.675, y: 0.0, sx: 4.55, sy: 6.0, color: [0.86, 0.93, 0.97, 1]}
+  - {name: zone_counter,    x: 4.825, y: 0.0, sx: 3.55, sy: 6.0, color: [0.97, 0.94, 0.86, 1]}

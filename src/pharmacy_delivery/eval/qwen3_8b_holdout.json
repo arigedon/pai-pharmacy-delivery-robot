@@ -1,0 +1,425 @@
+{
+  "summary": {
+    "backend": "ollama",
+    "model": "qwen3:8b",
+    "n": 36,
+    "accuracy": 0.917,
+    "accept_accuracy": 0.875,
+    "reject_accuracy": 1.0,
+    "latency_median_sec": 4.46,
+    "latency_max_sec": 6.01
+  },
+  "rows": [
+    {
+      "instruction": "冷蔵庫の中の目薬を1番の窓口までお願いします",
+      "expected": [
+        "fridge",
+        "counter_1"
+      ],
+      "got": [
+        "fridge",
+        "counter_1"
+      ],
+      "ok": true,
+      "reply": "冷蔵庫から目薬を受け取り、投薬カウンター1番へ届けます。"
+    },
+    {
+      "instruction": "冷蔵庫の中の目薬を1番の窓口までお願いします",
+      "expected": [
+        "fridge",
+        "counter_1"
+      ],
+      "got": [
+        "fridge",
+        "counter_1"
+      ],
+      "ok": true,
+      "reply": "冷蔵庫から目薬を受け取り、投薬カウンター1番へ届けます。"
+    },
+    {
+      "instruction": "冷蔵庫の中の目薬を1番の窓口までお願いします",
+      "expected": [
+        "fridge",
+        "counter_1"
+      ],
+      "got": [
+        "fridge",
+        "counter_1"
+      ],
+      "ok": true,
+      "reply": "冷蔵庫から目薬を受け取り、投薬カウンター1番へ届けます。"
+    },
+    {
+      "instruction": "外用薬の棚からテープ剤を取ってきて。鑑査を通してから3番カウンターへ",
+      "expected": [
+        "shelf_b",
+        "audit",
+        "counter_3"
+      ],
+      "got": [
+        "shelf_b",
+        "audit",
+        "counter_3"
+      ],
+      "ok": true,
+      "reply": "薬品棚Bでテープ剤を受け取り、鑑査台で確認した後、投薬カウンター3番へ届けます。"
+    },
+    {
+      "instruction": "外用薬の棚からテープ剤を取ってきて。鑑査を通してから3番カウンターへ",
+      "expected": [
+        "shelf_b",
+        "audit",
+        "counter_3"
+      ],
+      "got": [
+        "shelf_b",
+        "audit",
+        "counter_3"
+      ],
+      "ok": true,
+      "reply": "薬品棚Bでテープ剤を受け取り、鑑査台で確認した後、投薬カウンター3番へ届けます。"
+    },
+    {
+      "instruction": "外用薬の棚からテープ剤を取ってきて。鑑査を通してから3番カウンターへ",
+      "expected": [
+        "shelf_b",
+        "audit",
+        "counter_3"
+      ],
+      "got": [
+        "shelf_b",
+        "audit",
+        "counter_3"
+      ],
+      "ok": true,
+      "reply": "薬品棚Bでテープ剤を受け取り、鑑査台で確認した後、投薬カウンター3番へ届けます。"
+    },
+    {
+      "instruction": "2番カウンターから戻ってきた薬を調剤室に持って帰って",
+      "expected": [
+        "counter_2",
+        "home"
+      ],
+      "got": [
+        "counter_2",
+        "home"
+      ],
+      "ok": true,
+      "reply": "2番カウンターから薬を回収し、調剤室へ戻ります。"
+    },
+    {
+      "instruction": "2番カウンターから戻ってきた薬を調剤室に持って帰って",
+      "expected": [
+        "counter_2",
+        "home"
+      ],
+      "got": [
+        "counter_2",
+        "home"
+      ],
+      "ok": true,
+      "reply": "2番カウンターから戻ってきた薬を調剤室に持ち戻ります。"
+    },
+    {
+      "instruction": "2番カウンターから戻ってきた薬を調剤室に持って帰って",
+      "expected": [
+        "counter_2",
+        "home"
+      ],
+      "got": [
+        "counter_2",
+        "home"
+      ],
+      "ok": true,
+      "reply": "2番カウンターから戻ってきた薬を調剤室に持ち戻ります。"
+    },
+    {
+      "instruction": "内服薬の棚に寄ってから、冷蔵庫にも寄って、最後に鑑査台へ",
+      "expected": [
+        "shelf_a",
+        "fridge",
+        "audit"
+      ],
+      "got": [
+        "shelf_a",
+        "fridge",
+        "audit"
+      ],
+      "ok": true,
+      "reply": "薬品棚Aに寄り、冷蔵庫に寄り、鑑査台へ行きます。"
+    },
+    {
+      "instruction": "内服薬の棚に寄ってから、冷蔵庫にも寄って、最後に鑑査台へ",
+      "expected": [
+        "shelf_a",
+        "fridge",
+        "audit"
+      ],
+      "got": [
+        "shelf_a",
+        "fridge",
+        "audit"
+      ],
+      "ok": true,
+      "reply": "薬品棚Aに寄り、冷蔵庫に寄り、鑑査台へ行きます。"
+    },
+    {
+      "instruction": "内服薬の棚に寄ってから、冷蔵庫にも寄って、最後に鑑査台へ",
+      "expected": [
+        "shelf_a",
+        "fridge",
+        "audit"
+      ],
+      "got": [
+        "shelf_a",
+        "fridge",
+        "audit"
+      ],
+      "ok": true,
+      "reply": "薬品棚Aに寄り、冷蔵庫に寄り、鑑査台へ行きます。"
+    },
+    {
+      "instruction": "鑑査が終わった薬を2番へ届けて、そのあと元の場所で待機",
+      "expected": [
+        "audit",
+        "counter_2",
+        "home"
+      ],
+      "got": [
+        "audit",
+        "counter_2",
+        "home"
+      ],
+      "ok": true,
+      "reply": "鑑査を終えた薬を投薬カウンター2番へ届け、その後元の場所で待機します。"
+    },
+    {
+      "instruction": "鑑査が終わった薬を2番へ届けて、そのあと元の場所で待機",
+      "expected": [
+        "audit",
+        "counter_2",
+        "home"
+      ],
+      "got": [
+        "audit",
+        "counter_2",
+        "home"
+      ],
+      "ok": true,
+      "reply": "鑑査を終えた薬を投薬カウンター2番へ届け、その後元の場所で待機します。"
+    },
+    {
+      "instruction": "鑑査が終わった薬を2番へ届けて、そのあと元の場所で待機",
+      "expected": [
+        "audit",
+        "counter_2",
+        "home"
+      ],
+      "got": [
+        "audit",
+        "counter_2",
+        "home"
+      ],
+      "ok": true,
+      "reply": "鑑査を終えた薬を投薬カウンター2番へ届け、その後元の場所で待機します。"
+    },
+    {
+      "instruction": "錠剤の棚から1番カウンターへ。急ぎです",
+      "expected": [
+        "shelf_a",
+        "counter_1"
+      ],
+      "got": [
+        "shelf_a",
+        "counter_1"
+      ],
+      "ok": true,
+      "reply": "薬品棚Aで錠剤を受け取り、投薬カウンター1番へ届けます。"
+    },
+    {
+      "instruction": "錠剤の棚から1番カウンターへ。急ぎです",
+      "expected": [
+        "shelf_a",
+        "counter_1"
+      ],
+      "got": [
+        "shelf_a",
+        "counter_1"
+      ],
+      "ok": true,
+      "reply": "薬品棚Aで錠剤を受け取り、投薬カウンター1番へ届けます。"
+    },
+    {
+      "instruction": "錠剤の棚から1番カウンターへ。急ぎです",
+      "expected": [
+        "shelf_a",
+        "counter_1"
+      ],
+      "got": [
+        "shelf_a",
+        "counter_1"
+      ],
+      "ok": true,
+      "reply": "薬品棚Aで錠剤を受け取り、投薬カウンター1番へ届けます。"
+    },
+    {
+      "instruction": "冷蔵庫から3番へ持っていったら、ついでに外用薬の棚も見てきて",
+      "expected": [
+        "fridge",
+        "counter_3",
+        "shelf_b"
+      ],
+      "got": [
+        "fridge",
+        "counter_3",
+        "shelf_b"
+      ],
+      "ok": true,
+      "reply": "冷蔵庫から3番カウンターへ薬を運び、外用薬の棚も確認します。"
+    },
+    {
+      "instruction": "冷蔵庫から3番へ持っていったら、ついでに外用薬の棚も見てきて",
+      "expected": [
+        "fridge",
+        "counter_3",
+        "shelf_b"
+      ],
+      "got": [
+        "fridge",
+        "counter_3",
+        "shelf_b"
+      ],
+      "ok": true,
+      "reply": "冷蔵庫から3番カウンターへ薬を運び、外用薬の棚も確認します。"
+    },
+    {
+      "instruction": "冷蔵庫から3番へ持っていったら、ついでに外用薬の棚も見てきて",
+      "expected": [
+        "fridge",
+        "counter_3",
+        "shelf_b"
+      ],
+      "got": [
+        "fridge",
+        "counter_3",
+        "shelf_b"
+      ],
+      "ok": true,
+      "reply": "冷蔵庫から薬を受け取り、3番カウンターへ届けます。その後、外用薬の棚を確認します。"
+    },
+    {
+      "instruction": "Please take the ointment from the shelf to counter 2",
+      "expected": [
+        "shelf_b",
+        "counter_2"
+      ],
+      "got": null,
+      "ok": false,
+      "reply": "一覧にない場所が含まれています: shelf。行き先を確認してください。"
+    },
+    {
+      "instruction": "Please take the ointment from the shelf to counter 2",
+      "expected": [
+        "shelf_b",
+        "counter_2"
+      ],
+      "got": null,
+      "ok": false,
+      "reply": "一覧にない場所が含まれています: shelf。行き先を確認してください。"
+    },
+    {
+      "instruction": "Please take the ointment from the shelf to counter 2",
+      "expected": [
+        "shelf_b",
+        "counter_2"
+      ],
+      "got": null,
+      "ok": false,
+      "reply": "一覧にない場所が含まれています: shelf。行き先を確認してください。"
+    },
+    {
+      "instruction": "5番カウンターに薬を届けて",
+      "expected": null,
+      "got": null,
+      "ok": true,
+      "reply": "一覧にない場所が含まれています: 5番カウンター。行き先を確認してください。"
+    },
+    {
+      "instruction": "5番カウンターに薬を届けて",
+      "expected": null,
+      "got": null,
+      "ok": true,
+      "reply": "一覧にない場所が含まれています: 5番カウンター。行き先を確認してください。"
+    },
+    {
+      "instruction": "5番カウンターに薬を届けて",
+      "expected": null,
+      "got": null,
+      "ok": true,
+      "reply": "一覧にない場所が含まれています: 5番カウンター。行き先を確認してください。"
+    },
+    {
+      "instruction": "隣の病院まで処方箋を取りに行って",
+      "expected": null,
+      "got": null,
+      "ok": true,
+      "reply": "一覧にない場所が含まれています: 隣の病院。行き先を確認してください。"
+    },
+    {
+      "instruction": "隣の病院まで処方箋を取りに行って",
+      "expected": null,
+      "got": null,
+      "ok": true,
+      "reply": "一覧にない場所が含まれています: 隣の病院。行き先を確認してください。"
+    },
+    {
+      "instruction": "隣の病院まで処方箋を取りに行って",
+      "expected": null,
+      "got": null,
+      "ok": true,
+      "reply": "一覧にない場所が含まれています: 隣の病院。行き先を確認してください。"
+    },
+    {
+      "instruction": "待合室の患者さんに声をかけてきて",
+      "expected": null,
+      "got": null,
+      "ok": true,
+      "reply": "一覧にない場所が含まれています: 待合室。行き先を確認してください。"
+    },
+    {
+      "instruction": "待合室の患者さんに声をかけてきて",
+      "expected": null,
+      "got": null,
+      "ok": true,
+      "reply": "一覧にない場所が含まれています: 待合室。行き先を確認してください。"
+    },
+    {
+      "instruction": "待合室の患者さんに声をかけてきて",
+      "expected": null,
+      "got": null,
+      "ok": true,
+      "reply": "一覧にない場所が含まれています: 待合室。行き先を確認してください。"
+    },
+    {
+      "instruction": "適当に動いて",
+      "expected": null,
+      "got": null,
+      "ok": true,
+      "reply": "指示が不明です。具体的なタスクを教えてください。"
+    },
+    {
+      "instruction": "適当に動いて",
+      "expected": null,
+      "got": null,
+      "ok": true,
+      "reply": "指示が不明です。具体的なタスクを教えてください。"
+    },
+    {
+      "instruction": "適当に動いて",
+      "expected": null,
+      "got": null,
+      "ok": true,
+      "reply": "指示が不明です。具体的なタスクを教えてください。"
+    }
+  ]
+}
