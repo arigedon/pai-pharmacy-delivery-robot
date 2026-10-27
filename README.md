@@ -116,6 +116,7 @@ Gemini API を使う場合は `LLM_BACKEND=gemini GEMINI_API_KEY=...`（既定�
   解説記事 https://qiita.com/N622/items/9d89f77d85d9da0af29e
 - キー入力：[nek009/key_event](https://github.com/nek009/key_event)（本リポジトリには含めていない）
 - LLM：Qwen3 8B（Ollama）
+- 開発にはAIコーディング支援（Claude Code）を使用した。設計の判断、評価結果、動作の確認は自分で行った。
 
 ## ライセンス
 
